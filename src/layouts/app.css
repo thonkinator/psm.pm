@@ -1,0 +1,17 @@
+h1,
+h2,
+h3 {
+	font-size: 1rem;
+	margin: 0;
+	margin-top: var(--lh);
+}
+p {
+	margin: var(--lh) 0;
+}
+a {
+	color: inherit;
+	text-underline-offset: 3px;
+}
+pre {
+	margin: 0;
+}

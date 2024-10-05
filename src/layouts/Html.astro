@@ -1,0 +1,45 @@
+---
+import "./app.css";
+---
+
+<html lang="en" style="background: #000;">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width" />
+		<title>Patrick Martin</title>
+	</head>
+	<body>
+		<header>
+			<a href="/"
+				>http<span>s</span>://{Astro.url.hostname}:{Astro.url.port || 80}{
+					!Astro.url.port && <span>80</span>
+				}</a
+			>{Astro.url.pathname}{
+				"-".repeat(
+					60 -
+						((Astro.url.hostname + (Astro.url.port || 8080) + Astro.url.pathname)
+							.length +
+							9)
+				)
+			}
+		</header>
+		<slot />
+		<style>
+			html {
+				color: white;
+				font-family: monospace;
+				font-size: 16px;
+				--lh: 18px;
+				line-height: var(--lh);
+				display: flex;
+				justify-content: center;
+			}
+			body {
+				width: 60ch;
+			}
+			span {
+				color: silver;
+			}
+		</style>
+	</body>
+</html>
